@@ -92,12 +92,10 @@ def processInput(input):
     elif input == 'F18':
         kbd.send(Keycode.F18)
     else:
-        print("Invalid input.")
+        return
 
-# main() is the program's main thread
-def main():
-    setup()
-
+# loop() runs as long as the microcontroller has power
+def loop():
     activeButton = None
     while True:
         input = checkForInput()
@@ -108,5 +106,9 @@ def main():
             ledBurst()
         elif input == 'Null' and activeButton is not None:
             activeButton = None
-            
+
+# main() is the program's main thread
+def main():
+    setup()
+    loop()    
 main()

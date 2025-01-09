@@ -31,9 +31,6 @@ class Keys:
         return cls._members.items()
 
 # Definition of pins for RPI Pico clone
-backlightLed = d.DigitalInOut(b.GP9)
-backlightLed.direction = d.Direction.OUTPUT
-
 inputLed = d.DigitalInOut(b.GP25)
 inputLed.direction = d.Direction.OUTPUT
 

@@ -1,10 +1,12 @@
 #importing relevant libraries
 import time
-import board as b
-import digitalio as d
+import board
+import digitalio
+import rotaryio
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
+from  adafruit_hid.consumer_control_code import  ConsumerControlCode
 
 # Custom "Enum" class replacement for CircuitPython
 class Keys:
@@ -16,6 +18,9 @@ class Keys:
         'F16': 4,
         'F17': 5,
         'F18': 6,
+        'Mute': 7,
+        'Vol_Decrease': 8,
+        'Vol_Increase': 9,
     }
     @classmethod
     def get_by_value(cls, value):
@@ -31,19 +36,19 @@ class Keys:
         return cls._members.items()
 
 # Definition of pins for RPI Pico clone
-inputLed = d.DigitalInOut(b.GP25)
-inputLed.direction = d.Direction.OUTPUT
+inputLed = digitalio.DigitalInOut(board.GP25)
+inputLed.direction = digitalio.Direction.OUTPUT
 
-outputLanes = [d.DigitalInOut(b.GP15), d.DigitalInOut(b.GP14)]
+outputLanes = [digitalio.DigitalInOut(board.GP15), digitalio.DigitalInOut(board.GP14)]
 for lane in outputLanes:
-    lane.direction = d.Direction.OUTPUT
+    lane.direction = digitalio.Direction.OUTPUT
 
-detectLanes = [d.DigitalInOut(b.GP6), d.DigitalInOut(b.GP7), d.DigitalInOut(b.GP8)]
+detectLanes = [digitalio.DigitalInOut(board.GP6), digitalio.DigitalInOut(board.GP7), digitalio.DigitalInOut(board.GP8)]
 for lane in detectLanes:
-    lane.direction = d.Direction.INPUT
-    lane.pull = d.Pull.UP
+    lane.direction = digitalio.Direction.INPUT
+    lane.pull = digitalio.Pull.UP
 
-# Definition of relevant variables, etc.
+# Definition of relevant variaboardles, etc.
 kbd = Keyboard(usb_hid.devices)
 inputLedDelay = 0.05
 rows = 2

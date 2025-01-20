@@ -39,6 +39,10 @@ class Keys:
 inputLed = digitalio.DigitalInOut(board.GP25)
 inputLed.direction = digitalio.Direction.OUTPUT
 
+encoderButton = digitalio.DigitalInOut(board.GP12)
+encoderButton.direction = digitalio.Direction.INPUT
+encoderButton.pull = digitalio.Pull.UP
+
 outputLanes = [digitalio.DigitalInOut(board.GP15), digitalio.DigitalInOut(board.GP14)]
 for lane in outputLanes:
     lane.direction = digitalio.Direction.OUTPUT
@@ -55,11 +59,8 @@ inputLedDelay = 0.05
 rows = 2
 columns = 3
 
-encoder = rotaryio.IncrementalEncoder(board.D10, board.D11)
-last_position = None
-encoderButton = digitalio.DigitalInOut(board.GP12)
-encoderButton.direction = digitalio.Direction.INPUT
-encoderButton.pull = digitalio.Pull.UP
+encoder = rotaryio.IncrementalEncoder(board.GP10, board.GP11)
+last_position = encoder.position
 
 # setup() runs once at startup
 def setup():
@@ -88,6 +89,7 @@ def checkForInput():
     if not encoderButton.value:
         return 'Mute'
     
+    global last_position
     position = encoder.position
     if position < last_position:
         last_position = position

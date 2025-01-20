@@ -6,7 +6,7 @@ import rotaryio
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
-from  adafruit_hid.consumer_control_code import  ConsumerControlCode
+from adafruit_hid.consumer_control_code import  ConsumerControlCode
 
 # Custom "Enum" class replacement for CircuitPython
 class Keys:

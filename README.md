@@ -1,5 +1,5 @@
 # OpenstreamdeckV2-main
-A 3D-printable Version of a streamdeck with 6 keyswitches(F13-F18) and volume control rotary encoder(increase, decrease, mute) using a RP2040 Microcontroller.
+A 3D-printable Version of the Elgato streamdeck using 6 keyswitches(F13-F18) and a volume control rotary encoder(increase, decrease, mute) with a RP2040 Microcontroller.
 
 
 ## External Works used:

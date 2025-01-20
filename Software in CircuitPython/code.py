@@ -48,11 +48,18 @@ for lane in detectLanes:
     lane.direction = digitalio.Direction.INPUT
     lane.pull = digitalio.Pull.UP
 
-# Definition of relevant variaboardles, etc.
+# Definition of relevant variables, etc.
 kbd = Keyboard(usb_hid.devices)
+
 inputLedDelay = 0.05
 rows = 2
 columns = 3
+
+encoder = rotaryio.IncrementalEncoder(board.D10, board.D11)
+last_position = None
+encoderButton = digitalio.DigitalInOut(board.GP12)
+encoderButton.direction = digitalio.Direction.INPUT
+encoderButton.pull = digitalio.Pull.UP
 
 # setup() runs once at startup
 def setup():
@@ -77,22 +84,49 @@ def checkForInput():
                 enum_value = outputLanes.index(row) * 3 + detectLanes.index(colum) + 1
                 return Keys.get_by_value(enum_value)
         row.value = False
+
+    if not encoderButton.value:
+        return 'Mute'
+    
+    position = encoder.position
+    if position < last_position:
+        last_position = position
+        return 'Vol_Decrease'
+    elif position > last_position:
+        last_position = position
+        return 'Vol_Increase'
+    
     return 'Null'
 
 # processInput() sends the Keycode to the Computer
 def processInput(input):
     if input == 'F13':
         kbd.send(Keycode.F13)
+        return
     elif input == 'F14':
         kbd.send(Keycode.F14)
+        return
     elif input == 'F15':
         kbd.send(Keycode.F15)
+        return
     elif input == 'F16':
         kbd.send(Keycode.F16)
+        return
     elif input == 'F17':
         kbd.send(Keycode.F17)
+        return
     elif input == 'F18':
         kbd.send(Keycode.F18)
+        return
+    elif input == 'Mute':
+        kbd.send(ConsumerControlCode.MUTE)
+        return
+    elif input == 'Vol_Decrease':
+        kbd.send(ConsumerControlCode.VOLUME_DECREMENT)
+        return
+    elif input == 'Vol_Increase':
+        kbd.send(ConsumerControlCode.VOLUME_INCREMENT)
+        return
     else:
         return
 

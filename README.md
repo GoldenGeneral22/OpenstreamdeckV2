@@ -9,6 +9,6 @@ Circuit diagram software used https://fritzing.org/
 HID-Library used https://github.com/adafruit/Adafruit_CircuitPython_HID
 
 ### Hardware
-Dollatek RP2040 Microcontroller used https://www.amazon.de/dp/B0BKZB6SVV?
+Dollatek RP2040 Microcontroller used https://www.amazon.de/dp/B0BKZB6SVV
 
 Blank Keycaps used https://www.thingiverse.com/thing:4186055 from CDante on Thingiverse

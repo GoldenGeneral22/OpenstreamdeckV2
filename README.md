@@ -12,3 +12,5 @@ HID-Library used https://github.com/adafruit/Adafruit_CircuitPython_HID
 Dollatek RP2040 Microcontroller used https://www.amazon.de/dp/B0BKZB6SVV
 
 Blank Keycaps used https://www.thingiverse.com/thing:4186055 from CDante on Thingiverse
+
+Encoder Knob used https://www.thingiverse.com/thing:2797118 from tsw on Thingiverse

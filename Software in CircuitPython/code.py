@@ -6,7 +6,8 @@ import rotaryio
 import usb_hid
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
-from adafruit_hid.consumer_control_code import  ConsumerControlCode
+from adafruit_hid.consumer_control import ConsumerControl
+from adafruit_hid.consumer_control_code import ConsumerControlCode
 
 # Custom "Enum" class replacement for CircuitPython
 class Keys:
@@ -54,6 +55,7 @@ for lane in detectLanes:
 
 # Definition of relevant variables, etc.
 kbd = Keyboard(usb_hid.devices)
+cc = ConsumerControl(usb_hid.devices)
 
 inputLedDelay = 0.05
 rows = 2
@@ -121,13 +123,13 @@ def processInput(input):
         kbd.send(Keycode.F18)
         return
     elif input == 'Mute':
-        kbd.send(ConsumerControlCode.MUTE)
+        cc.send(ConsumerControlCode.MUTE)
         return
     elif input == 'Vol_Decrease':
-        kbd.send(ConsumerControlCode.VOLUME_DECREMENT)
+        cc.send(ConsumerControlCode.VOLUME_DECREMENT)
         return
     elif input == 'Vol_Increase':
-        kbd.send(ConsumerControlCode.VOLUME_INCREMENT)
+        cc.send(ConsumerControlCode.VOLUME_INCREMENT)
         return
     else:
         return

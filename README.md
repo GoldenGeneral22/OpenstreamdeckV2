@@ -1,5 +1,5 @@
 # OpenstreamdeckV2: modular and open-source
-A modular 3D-printable Version of the Elgato streamdeck using 6 cherry-mx-style keyswitches(F13-F18) and a pressable KY-040 rotary encoder(volume increase, volume decrease, volume mute) as well as a RP2040 Microcontroller.
+A modular open-source 3D-printable Version of the Elgato streamdeck using 6 cherry-mx-style keyswitches(F13-F18) and a pressable KY-040 rotary encoder(volume increase, volume decrease, volume mute) as well as a RP2040 Microcontroller running circuitpython.
 
 The area is divided into one bigger rectancular modul, used for the keyswitches and one smaller square modul, used for the rotary encoder.
 

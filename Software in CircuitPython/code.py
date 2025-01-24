@@ -37,7 +37,7 @@ class Keys:
         return cls._members.items()
 
 # Definition of pins for RPI Pico clone
-inputLed = digitalio.DigitalInOut(board.GP25)
+inputLed = digitalio.DigitalInOut(board.GP9)
 inputLed.direction = digitalio.Direction.OUTPUT
 
 encoderButton = digitalio.DigitalInOut(board.GP12)
@@ -105,7 +105,11 @@ def checkForInput():
 # processInput() sends the Keycode to the Computer
 def processInput(input):
     if input == 'F13':
-        kbd.send(Keycode.F13)
+        kbd.press(Keycode.WINDOWS)
+        kbd.press(Keycode.E)
+        time.sleep(.09)
+        kbd.release(Keycode.WINDOWS)
+        kbd.release(Keycode.E)
         return
     elif input == 'F14':
         kbd.send(Keycode.F14)
@@ -114,7 +118,15 @@ def processInput(input):
         kbd.send(Keycode.F15)
         return
     elif input == 'F16':
-        kbd.send(Keycode.F16)
+        kbd.press(Keycode.CONTROL)
+        kbd.press(Keycode.LEFT_ALT)
+        kbd.press(Keycode.LEFT_SHIFT)
+        kbd.press(Keycode.F12)
+        time.sleep(.09)
+        kbd.release(Keycode.CONTROL)
+        kbd.release(Keycode.LEFT_ALT)
+        kbd.release(Keycode.LEFT_SHIFT)
+        kbd.release(Keycode.F12)
         return
     elif input == 'F17':
         kbd.send(Keycode.F17)

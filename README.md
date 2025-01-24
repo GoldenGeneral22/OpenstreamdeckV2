@@ -11,7 +11,7 @@ Circuit diagram software used https://fritzing.org/
 
 HID-Library used https://github.com/adafruit/Adafruit_CircuitPython_HID
 
-USB-HID Library used https://docs.circuitpython.org/en/latest/shared-bindings/usb_hid/
+USB-Library used https://docs.circuitpython.org/en/latest/shared-bindings/usb_hid/
 
 ### Hardware
 RP2040 Microcontroller used https://amzn.eu/d/6dbKLKC

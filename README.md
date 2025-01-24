@@ -20,7 +20,7 @@ KY-040 rotary encoders used https://amzn.eu/d/2rxxnzF
 
 Keyswitches used https://amzn.eu/d/dNDsguh
 
-also used m3 screws, m3 thread inserts, female-to-female jumper cables, 3mm blue LEDs and resistors (ohms, ohms)
+also used m3 screws, m3 thread inserts, female-to-female jumper cables, 3mm blue LEDs and resistors for the LEDs
 
 ### 3D-Prints
 blank keycaps used https://www.thingiverse.com/thing:4186055 from CDante on Thingiverse.

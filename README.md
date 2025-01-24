@@ -14,7 +14,7 @@ HID-Library used https://github.com/adafruit/Adafruit_CircuitPython_HID
 USB-HID Library used https://docs.circuitpython.org/en/latest/shared-bindings/usb_hid/
 
 ### Hardware
-Dollatek RP2040 Microcontroller used https://amzn.eu/d/6dbKLKC
+RP2040 Microcontroller used https://amzn.eu/d/6dbKLKC
 
 KY-040 rotary encoders used https://amzn.eu/d/2rxxnzF
 

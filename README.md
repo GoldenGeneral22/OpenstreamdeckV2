@@ -3,7 +3,7 @@ A modular 3D-printable Version of the Elgato streamdeck using 6 cherry-mx-style 
 
 The area is divided into one bigger rectancular modul, used for the keyswitches and one smaller square modul, used for the rotary encoder.
 
-To increase modularity and repairability only Jumper-Cables were used to connect to the RP2040 Microcontrollerboard.
+To increase modularity and repairability only Jumper-Cables were used to connect to the RP2040 Microcontroller.
 
 ## External Works used:
 ### Software
